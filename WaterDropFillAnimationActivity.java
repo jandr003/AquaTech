@@ -53,7 +53,7 @@ public class WaterDropFillAnimationActivity extends AppCompatActivity {
 
     private ValueAnimator pulseAnimator;
 
-    private DatabaseReference dbRef;
+    private final String DB_URL = "YOUR_FIREBASE_DATABASE_URL";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +61,9 @@ public class WaterDropFillAnimationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_water_drop_fill);
 
         mAuth = FirebaseAuth.getInstance();
-        dbRef = FirebaseDatabase.getInstance().getReference("ServiceRequests");
+        dbRef = FirebaseDatabase.getInstance(DB_URL).getReference("ServiceRequests");
         storageRef = FirebaseStorage.getInstance().getReference("CustomerIDs");
-        
+
         loadIntentExtras();
         initializeViews();
         startAnimations();
@@ -165,7 +165,14 @@ public class WaterDropFillAnimationActivity extends AppCompatActivity {
         new Thread(() -> {
             try {
                 Geocoder geocoder = new Geocoder(this, new Locale("en", "PH"));
-                String searchStr = address.replace("corner", "").replace("Corner", "") + ", Philippines";
+                String searchStr = "";
+
+                if(address != null && !address.isEmpty()){
+                    searchStr = address.replace("corner", "")
+                            .replace("Corner", "")
+                            + ", Philippines";
+                }
+                
                 List<Address> addresses = geocoder.getFromLocationName(searchStr, 1);
                 if (addresses != null && !addresses.isEmpty()) {
                     latitude = addresses.get(0).getLatitude();
