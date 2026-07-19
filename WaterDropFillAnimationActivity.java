@@ -53,7 +53,7 @@ public class WaterDropFillAnimationActivity extends AppCompatActivity {
 
     private ValueAnimator pulseAnimator;
 
-    private final String DB_URL = "https://aquatech-8da99c74-default-rtdb.asia-southeast1.firebasedatabase.app/";
+    private DatabaseReference dbRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +61,9 @@ public class WaterDropFillAnimationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_water_drop_fill);
 
         mAuth = FirebaseAuth.getInstance();
-        dbRef = FirebaseDatabase.getInstance(DB_URL).getReference("ServiceRequests");
+        dbRef = FirebaseDatabase.getInstance().getReference("ServiceRequests");
         storageRef = FirebaseStorage.getInstance().getReference("CustomerIDs");
-
+        
         loadIntentExtras();
         initializeViews();
         startAnimations();
