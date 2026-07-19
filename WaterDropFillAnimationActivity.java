@@ -53,7 +53,7 @@ public class WaterDropFillAnimationActivity extends AppCompatActivity {
 
     private ValueAnimator pulseAnimator;
 
-    private final String DB_URL = "YOUR_FIREBASE_DATABASE_URL";
+    private final String DB_URL = BuildConfig.FIREBASE_DB_URL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
