@@ -1,17 +1,14 @@
-# AquaTech
+# AquaTech – Water Drop Fill Animation
 
-AquaTech is an Android application developed for water service operations. This repository contains the **water drop animation component** and its supporting XML layouts used in the application.
+AquaTech is an Android-based implementation of a custom **water drop fill animation** developed using Java and Android XML. The project focuses on rendering and animating a water level inside a drop-shaped container using a custom Android `View`.
 
-## Water Drop Animation
+## Features
 
-The water drop animation provides a visual representation of water filling inside a drop-shaped container. It was implemented as a custom Android view and Java activity.
-
-The component includes:
-
-* Animated water filling effect
 * Custom water drop shape
+* Animated water filling effect
 * Adjustable water level
-* Java-based animation handling
+* Custom drawing using Android Canvas
+* Java-based animation control
 * XML layout integration
 
 ## Technologies
@@ -24,13 +21,13 @@ The component includes:
 
 ## Source Files
 
-* [`WaterDropFillAnimationActivity.java`](https://github.com/jandr003/AquaTech/blob/main/WaterDropFillAnimationActivity.java)
-* [`WaterDropView.java`](https://github.com/jandr003/AquaTech/blob/main/WaterDropView.java)
-* [`activity_view_water_drop_fill.xml`](https://github.com/jandr003/AquaTech/blob/main/activity_view_water_drop_fill.xml)
-* [`activity_service_status.xml`](https://github.com/jandr003/AquaTech/blob/main/activity_service_status.xml)
+| File                                  | Description                                        |
+| ------------------------------------- | -------------------------------------------------- |
+| `WaterDropFillAnimationActivity.java` | Controls the water drop fill animation             |
+| `WaterDropView.java`                  | Renders the water drop and water level             |
+| `activity_view_water_drop_fill.xml`   | Layout for the water drop animation                |
+| `activity_service_status.xml`         | Supporting layout for the service status interface |
 
-## Project Status
+## Project Scope
 
-**Completed**
-
-The water drop animation component and its supporting layouts have been implemented and are available in this repository.
+This repository is dedicated to the **water drop fill animation component** used in AquaTech. It contains the core implementation and supporting XML layouts required to display and control the animation.
